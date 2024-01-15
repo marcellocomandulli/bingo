@@ -60,44 +60,6 @@ button:active {
       }
    }
 
-#minus {
-   position: absolute;
-   bottom: 15%;
-   left: 12%;
-}
-
-#reset {
-   position: absolute;
-   bottom: 15%;
-   left: 39%;
-}
-
-#plus {
-   position: absolute;
-   bottom: 15%;
-   left: 66%;
-}
-
-   @media screen and (min-width: 800px){
-      #minus {
-         position: absolute;
-         bottom: 10%;
-         left: 60%;
-      }
-      
-      #reset {
-         position: absolute;
-         bottom: 10%;
-         left: 70%;
-      }
-      
-      #plus {
-         position: absolute;
-         bottom: 10%;
-         left: 80%;
-      }
-
-   }
 #game-console {
    width: 95%;
    display: flex;
@@ -108,7 +70,7 @@ button:active {
 
    @media screen and (min-width: 800px){
       #game-console {
-         height: 80%;
+         height: 90%;
          flex-direction: row;
          align-items: flex-start;
          border: none;
@@ -127,16 +89,15 @@ button:active {
 
 /* GAME SCREEN STYLE */
 #game-screen {
-   width: 370px;
-   height: 370px;
+   width: 330px;
+   height: 330px;
    border-radius: 20px;
    background-color: rgba(255, 255, 255, 0.821);
    margin-bottom: 3%;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
-   position: relative;
-   bottom: 30px;
+   
 }
 
    @media screen and (min-width: 800px){
@@ -150,13 +111,13 @@ button:active {
    }
 
 .number {
-   width: 30px;
-   height: 30px;
+   width: 27px;
+   height: 27px;
    border-radius: 15px;
    border: 1px solid black;
    margin: 2px;
    text-align: center;
-   font-size: 23px;
+   font-size: 21px;
 }
 
    @media screen and (min-width: 800px){
@@ -190,8 +151,14 @@ button:active {
 
 
       /* GAME CONTROLS STYLE */
+#game-controls {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
 #game-controls span {
-   line-height:70%;
+   line-height: 70%;
    text-align: start;
 }
 
@@ -203,9 +170,23 @@ button:active {
    background-color: rgba(58, 209, 255, 0.855);
 }
 
+.extdiv {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin-bottom: 3%;
+}
+
+.btndiv {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   margin-left: -10%;
+}
+
    @media screen and (min-width: 800px){
       #game-controls {
-         height: 50px;
          display: flex;
       }
 
@@ -220,6 +201,8 @@ button:active {
          font-size: 100px;
       }
    }
+
+
 
 /* GAME CONTROLS STYLE */
 #act-num-cont {
@@ -270,6 +253,7 @@ button:active {
       }
 
       #last-numbers span{
+         text-align: start;
          font-size: 50px;
       }
 

@@ -56,13 +56,19 @@ const counter = document.createElement("h2");
 let count = 0;
 counter.innerHTML = count;
 
+const extDiv = document.createElement("div");
+extDiv.classList.add("extdiv");
+extDiv.appendChild(extracted);
+extDiv.appendChild(counter);
 
-gameControls.appendChild(extracted);
-gameControls.appendChild(counter);
-gameControls.appendChild(minusBtn);
-gameControls.appendChild(resetBtn);
-gameControls.appendChild(plusBtn);
+const btnDiv = document.createElement("div");
+btnDiv.classList.add("btndiv");
+btnDiv.appendChild(minusBtn);
+btnDiv.appendChild(resetBtn);
+btnDiv.appendChild(plusBtn);
 
+gameControls.appendChild(extDiv);
+gameControls.appendChild(btnDiv);
 
 //RESET FUNCTION
 resetBtn.addEventListener("click", function () {
