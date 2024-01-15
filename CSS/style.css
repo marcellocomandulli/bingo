@@ -10,17 +10,12 @@ body {
    flex-direction: column;
    align-items: center;
    font-family: 'Dongle', sans-serif;
-   background-image: url(../img/bgimg.jpg);
+   background: url(../img/bgimg.jpg);
    background-size: cover;
    background-position: center;
    overflow: hidden;
 }
 
-   @media screen and (min-width: 800px){
-      body {
-         background-size: cover;
-      }
-   }
 
 h1 {
    text-align: center;
