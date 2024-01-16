@@ -4,8 +4,8 @@ THIS IS WHAT YOU WANT when YOU DON'T HAVE those 90 numbers to draw (because some
 
 You can enjoy play BINGO/TOMBOLA from your smartphone or computer, it's up to you!
 
-![](/readme photo/PC_Screen.jpg)
-![](/readme photo/Mobile_Screen.jpg)
+![Computer screen](/readme photo/PC_Screen.jpg)
+![Mobile Screen](/readme photo/Mobile_Screen.jpg)
 
 You can see a big white board where every number drawn will be shown.
 
