@@ -1,6 +1,6 @@
 # Wanna play Bingo but you lost numbers to draw? 
 
-THIS IS WHAT YOU WANT when YOU DON'T HAVE those 90 numbers to draw (because someone lost them)...
+THIS IS WHAT YOU WANT when YOU DON'T HAVE those 90 numbers to draw (because someone lost them)...  
 You can enjoy play BINGO/TOMBOLA from your smartphone or computer, it's up to you!
 ***
 
