@@ -1,21 +1,20 @@
 # Wanna play Bingo but you lost numbers to draw? 
 
 THIS IS WHAT YOU WANT when YOU DON'T HAVE those 90 numbers to draw (because someone lost them)...
-
 You can enjoy play BINGO/TOMBOLA from your smartphone or computer, it's up to you!
 
-![Computer screen](/../readme photo/PC_Screen.jpg)
-![Mobile Screen](/readme photo/Mobile_Screen.jpg)
 
-You can see a big white board where every number drawn will be shown.
+It's really easy to use, read the instructions and have fun!🥳
 
-"ACTUAL NUMBER" shows the number just drawn. 
+1. You can see a BIG WHITE BOARD where every number drawn will be shown.
 
-"LAST NUMBERS" shows the last 4 numbers drawn.
+2. "ACTUAL NUMBER" shows the number just drawn. 
 
-"NUMBERS DRAWN" shows how many numbers have already been drawn.
+3. "LAST NUMBERS" shows the last 4 numbers drawn.
 
-You can see 3 buttons: 
+4. "NUMBERS DRAWN" shows how many numbers have already been drawn.
+
+5. You can see 3 buttons: 
 * "+" to draw a number, 
 * "-" to go back, 
 * "RESET" to start a new game.
