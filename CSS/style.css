@@ -57,6 +57,7 @@ button:active {
    @media screen and (min-width: 800px){
       button {
          font-size: 32px;
+         color: black;
       }
    }
 

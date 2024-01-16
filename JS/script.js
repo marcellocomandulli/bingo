@@ -3,7 +3,6 @@ const gameScreen = document.getElementById("game-screen");
 const gameControls = document.getElementById("game-controls");
 
 
-
 //CREATE BOARD'S NUMBERS AND THIER DIVs
 let randomArray = [];
 
@@ -51,7 +50,7 @@ resetBtn.setAttribute("id", "reset");
 resetBtn.innerHTML = "Reset";
 
 const extracted = document.createElement("span");
-extracted.innerHTML = "Numbers extracted:";
+extracted.innerHTML = "Numbers drawn:";
 const counter = document.createElement("h2");
 let count = 0;
 counter.innerHTML = count;
