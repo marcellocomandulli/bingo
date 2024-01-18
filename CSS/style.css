@@ -131,7 +131,7 @@ button:active {
       }
    }
 
-.extracted {
+.drawn {
    background-color: red;
    transition-duration: 700ms;
 }

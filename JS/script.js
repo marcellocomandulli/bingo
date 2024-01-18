@@ -35,8 +35,8 @@ function shuffle(array) {
 shuffle(randomArray);
 
 
-//CREATE GAME CONTROLS --> BUTTONS, NUMBERS ALREADY EXTRACTED AND
-//THE ACTUAL NUMBER (AKA THE NUMBER JUST EXTRACTED)
+//CREATE GAME CONTROLS --> BUTTONS, NUMBERS ALREADY DRAWN AND
+//THE ACTUAL NUMBER (AKA THE NUMBER JUST DRAWN)
 const plusBtn = document.createElement("button");
 plusBtn.setAttribute("id", "plus");
 plusBtn.innerHTML = "+";
@@ -48,6 +48,7 @@ minusBtn.innerHTML = "-";
 const resetBtn = document.createElement("button");
 resetBtn.setAttribute("id", "reset");
 resetBtn.innerHTML = "Reset";
+reset(resetBtn);
 
 const extracted = document.createElement("span");
 extracted.innerHTML = "Numbers drawn:";
@@ -69,59 +70,76 @@ btnDiv.appendChild(plusBtn);
 gameControls.appendChild(extDiv);
 gameControls.appendChild(btnDiv);
 
-//RESET FUNCTION
-resetBtn.addEventListener("click", function () {
-   location.reload();
-});
 
-
-//COUNTER NUMBERS EXTRACTED,
-//ACTUAL NUMBER EXTRACTED,
-//LAST 4 NUMBERS EXTRACTED
+//COUNTER NUMBERS DRAWN,
+//ACTUAL NUMBER DRAWN,
+//LAST 4 NUMBERS DRAWN
 let actualNumber = document.getElementById("act-num");
 let lastNumbers = document.getElementById("last-num");
-let j = 0;
-
 const arrayDiv = gameScreen.childNodes;
+let j = 0;
 
 
 gameControls.addEventListener("click", function (e) {
-
    let fourNums = [];
 
-   //COUNTER OF NUMBERS EXTRACTED
+   //COUNTER OF NUMBERS DRAWN
    if (e.target.id === "plus" && count >= 0 && count < 90) {
       count++;
       counter.innerHTML = count;
+      actualNumber.innerHTML = randomArray[j]; //SHOW THE NUMBER JUST DRAWN
 
-      actualNumber.innerHTML = randomArray[j]; //SHOW THE NUMBER JUST EXTRACTED
 
-      //COLOR THE EXTRACTED NUMBER'S BACKGROUND
-      for (let i = 0; i < 90; i++) { 
-         if (randomArray[j] == arrayDiv[i].innerHTML) {
-            arrayDiv[i].classList.add("extracted");
-         };
-      };
-      j++;
+      addColorNum(randomArray, arrayDiv);
+      
 
-      //SHOW THE LAST 4 NUMBERS EXTRACTED
-      for (n = count - 4; n < count; n++) {
-         fourNums.push(randomArray[n]);
-      };
-
+      lastNums(fourNums, randomArray);
       lastNumbers.innerHTML = fourNums.join(" ");
 
    } else if (e.target.id === "minus" && count > 1 && count < 91) {
       count--;
       counter.innerHTML = count;
-
       actualNumber.innerHTML = randomArray[j - 2];
-      j--;
 
-      for (n = count - 4; n < count; n++) {
-         fourNums.push(randomArray[n]);
-      };
 
+      removeColorNum(randomArray, arrayDiv);
+      
+
+      lastNums(fourNums, randomArray);
       lastNumbers.innerHTML = fourNums.join(" ");
-   }
+   };
 });
+
+//RESET FUNCTION
+function reset (btn) {
+   btn.addEventListener("click", function () {
+      location.reload();
+   });
+};
+
+//SHOW THE LAST 4 NUMBERS DRAWN
+function lastNums (array, randArray) {
+   for (n = count - 4; n < count; n++) {
+      array.push(randArray[n]);
+   };
+};
+
+//ADD COLOR TO THE DRAWN NUMBER'S BACKGROUND
+function addColorNum(randArray, array) {
+   for (let i = 0; i < 90; i++) { 
+      if (randArray[j] == array[i].innerHTML) {
+         array[i].classList.add("drawn");
+      };
+   };
+   j++;
+};
+
+//REMOVE COLOR TO THE DRAWN NUMBER'S BACKGROUND
+function removeColorNum(randArray, array) {
+   for (let i = 0; i < 90; i++) { 
+      if (randArray[j-1] == array[i].innerHTML) {
+         array[i].classList.remove("drawn");
+      };
+   };
+   j--;
+};
