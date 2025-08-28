@@ -3,6 +3,7 @@ const gameScreen = document.getElementById("game-screen");
 const gameControls = document.getElementById("game-controls");
 
 
+
 //CREATE BOARD'S NUMBERS AND THIER DIVs
 let randomArray = [];
 
@@ -14,7 +15,6 @@ randomArray.forEach((num) => {
    let div = document.createElement("div");
    gameScreen.appendChild(div);
    div.classList.add("number");
-   div.classList.add("a" + num);
    div.innerHTML = num;
 });
 
@@ -35,111 +35,75 @@ function shuffle(array) {
 shuffle(randomArray);
 
 
-//CREATE GAME CONTROLS --> BUTTONS, NUMBERS ALREADY DRAWN AND
-//THE ACTUAL NUMBER (AKA THE NUMBER JUST DRAWN)
+//CREATE GAME CONTROLS --> BUTTONS, NUMBERS ALREADY EXTRACTED AND
+//THE ACTUAL NUMBER (AKA THE NUMBER JUST EXTRACTED)
 const plusBtn = document.createElement("button");
 plusBtn.setAttribute("id", "plus");
-plusBtn.innerHTML = "+";
+plusBtn.innerHTML = "Draw number";
 
 const minusBtn = document.createElement("button");
 minusBtn.setAttribute("id", "minus");
-minusBtn.innerHTML = "-";
+minusBtn.innerHTML = "Back";
 
 const resetBtn = document.createElement("button");
 resetBtn.setAttribute("id", "reset");
 resetBtn.innerHTML = "Reset";
-reset(resetBtn);
 
 const extracted = document.createElement("span");
-extracted.innerHTML = "Numbers drawn:";
+extracted.innerHTML = "Numbers extracted:";
 const counter = document.createElement("h2");
 let count = 0;
 counter.innerHTML = count;
 
-const extDiv = document.createElement("div");
-extDiv.classList.add("extdiv");
-extDiv.appendChild(extracted);
-extDiv.appendChild(counter);
 
-const btnDiv = document.createElement("div");
-btnDiv.classList.add("btndiv");
-btnDiv.appendChild(minusBtn);
-btnDiv.appendChild(resetBtn);
-btnDiv.appendChild(plusBtn);
+gameControls.appendChild(extracted);
+gameControls.appendChild(counter);
+gameControls.appendChild(plusBtn);
+gameControls.appendChild(resetBtn);
+gameControls.appendChild(minusBtn);
 
-gameControls.appendChild(extDiv);
-gameControls.appendChild(btnDiv);
+//RESET FUNCTION
+resetBtn.addEventListener("click", function () {
+   location.reload();
+});
 
 
-//COUNTER NUMBERS DRAWN,
-//ACTUAL NUMBER DRAWN,
-//LAST 4 NUMBERS DRAWN
+//COUNTER NUMBERS EXTRACTED,
+//ACTUAL NUMBER EXTRACTED,
+//LAST 4 NUMBERS EXTRACTED
 let actualNumber = document.getElementById("act-num");
 let lastNumbers = document.getElementById("last-num");
-const arrayDiv = gameScreen.childNodes;
 let j = 0;
 
 
 gameControls.addEventListener("click", function (e) {
+
    let fourNums = [];
 
-   //COUNTER OF NUMBERS DRAWN
    if (e.target.id === "plus" && count >= 0 && count < 90) {
       count++;
-      counter.innerHTML = count;
-      actualNumber.innerHTML = randomArray[j]; //SHOW THE NUMBER JUST DRAWN
+      counter.innerHTML = count; //COUNTER OF NUMBERS EXTRACTED
 
+      actualNumber.innerHTML = randomArray[j]; //SHOW THE NUMBER JUST EXTRACTED
+      j++;
 
-      addColorNum(randomArray, arrayDiv);
-      
+      for (n = count - 4; n < count; n++) {    //SHOW THE LAST 4 NUMBERS EXTRACTED
+         fourNums.push(randomArray[n]);
+      };
 
-      lastNums(fourNums, randomArray);
       lastNumbers.innerHTML = fourNums.join(" ");
 
    } else if (e.target.id === "minus" && count > 1 && count < 91) {
       count--;
       counter.innerHTML = count;
+
       actualNumber.innerHTML = randomArray[j - 2];
+      j--;
 
+      for (n = count - 4; n < count; n++) {
+         fourNums.push(randomArray[n]);
+      };
 
-      removeColorNum(randomArray, arrayDiv);
-      
-
-      lastNums(fourNums, randomArray);
       lastNumbers.innerHTML = fourNums.join(" ");
-   };
+   }
 });
-
-//RESET FUNCTION
-function reset (btn) {
-   btn.addEventListener("click", function () {
-      location.reload();
-   });
-};
-
-//SHOW THE LAST 4 NUMBERS DRAWN
-function lastNums (array, randArray) {
-   for (n = count - 4; n < count; n++) {
-      array.push(randArray[n]);
-   };
-};
-
-//ADD COLOR TO THE DRAWN NUMBER'S BACKGROUND
-function addColorNum(randArray, array) {
-   for (let i = 0; i < 90; i++) { 
-      if (randArray[j] == array[i].innerHTML) {
-         array[i].classList.add("drawn");
-      };
-   };
-   j++;
-};
-
-//REMOVE COLOR TO THE DRAWN NUMBER'S BACKGROUND
-function removeColorNum(randArray, array) {
-   for (let i = 0; i < 90; i++) { 
-      if (randArray[j-1] == array[i].innerHTML) {
-         array[i].classList.remove("drawn");
-      };
-   };
-   j--;
-};
