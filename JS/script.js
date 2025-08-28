@@ -39,7 +39,7 @@ shuffle(randomArray);
 //THE ACTUAL NUMBER (AKA THE NUMBER JUST EXTRACTED)
 const plusBtn = document.createElement("button");
 plusBtn.setAttribute("id", "plus");
-plusBtn.innerHTML = "Draw number";
+plusBtn.innerHTML = "Draw!";
 
 const minusBtn = document.createElement("button");
 minusBtn.setAttribute("id", "minus");
