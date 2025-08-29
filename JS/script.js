@@ -54,14 +54,11 @@ const counter = document.createElement("h2");
 let count = 0;
 counter.innerHTML = count;
 
-let numExtracted = document.createElement("div");
-numExtracted.appendChild(extracted);
-numExtracted.appendChild(counter);
-
-let controls = document.createElement("div");
-controls.appendChild(plusBtn);
-controls.appendChild(resetBtn);
-controls.appendChild(minusBtn);
+gameControls.appendChild(extracted);
+gameControls.appendChild(counter);
+gameControls.appendChild(plusBtn);
+gameControls.appendChild(resetBtn);
+gameControls.appendChild(minusBtn);
 
 //RESET FUNCTION
 resetBtn.addEventListener("click", function () {
