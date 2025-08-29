@@ -39,11 +39,11 @@ shuffle(randomArray);
 //THE ACTUAL NUMBER (AKA THE NUMBER JUST DRAWN)
 const plusBtn = document.createElement("button");
 plusBtn.setAttribute("id", "plus");
-plusBtn.innerHTML = "+";
+plusBtn.innerHTML = "draw";
 
 const minusBtn = document.createElement("button");
 minusBtn.setAttribute("id", "minus");
-minusBtn.innerHTML = "-";
+minusBtn.innerHTML = "back";
 
 const resetBtn = document.createElement("button");
 resetBtn.setAttribute("id", "reset");
