@@ -1,6 +1,9 @@
 const gameConsole = document.getElementById("game-console");
 const gameScreen = document.getElementById("game-screen");
 const gameControls = document.getElementById("game-controls");
+const numExtracted = document.getElementById("num-ext");
+const controls = document.getElementById("controls");
+
 
 //CREATE BOARD'S NUMBERS AND THIER DIVs
 let randomArray = [];
@@ -54,11 +57,11 @@ const counter = document.createElement("h2");
 let count = 0;
 counter.innerHTML = count;
 
-gameControls.appendChild(extracted);
-gameControls.appendChild(counter);
-gameControls.appendChild(plusBtn);
-gameControls.appendChild(resetBtn);
-gameControls.appendChild(minusBtn);
+numExtracted.appendChild(extracted);
+numExtracted.appendChild(counter);
+controls.appendChild(plusBtn);
+controls.appendChild(resetBtn);
+controls.appendChild(minusBtn);
 
 //RESET FUNCTION
 resetBtn.addEventListener("click", function () {
