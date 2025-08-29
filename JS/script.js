@@ -1,9 +1,6 @@
 const gameConsole = document.getElementById("game-console");
 const gameScreen = document.getElementById("game-screen");
 const gameControls = document.getElementById("game-controls");
-const numExtracted = document.getElementById("num-ext");
-const controls = document.getElementById("controls");
-
 
 //CREATE BOARD'S NUMBERS AND THIER DIVs
 let randomArray = [];
@@ -57,8 +54,11 @@ const counter = document.createElement("h2");
 let count = 0;
 counter.innerHTML = count;
 
+let numExtracted = document.createElement("div");
 numExtracted.appendChild(extracted);
 numExtracted.appendChild(counter);
+
+let controls = document.createElement("div");
 controls.appendChild(plusBtn);
 controls.appendChild(resetBtn);
 controls.appendChild(minusBtn);
